@@ -36,7 +36,7 @@ class TodoList(Resource):
     def get(self):
         """List Todos"""
         todos = [marshal(todo, todo_fields) for todo in models.Todo.select()]
-        return {'todos': todos}
+        return todos
 
     @marshal_with(todo_fields)
     def post(self):
